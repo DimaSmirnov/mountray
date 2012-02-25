@@ -52,7 +52,7 @@ void AddDriveToMenu(const char *volume_name, int ismounted, GIcon *drive_icon) {
 		gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM (menuitem), image);
 	}
 	else {
-		GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("icons/unmount.png", &error);
+		GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("/usr/share/pixmaps/mountray/unmount.png", &error);
 		image = gtk_image_new_from_pixbuf(pixbuf);
 		menuitem = gtk_image_menu_item_new_with_label(volume_name);
 		gtk_widget_set_tooltip_text (menuitem,"Volume mounted");
@@ -76,7 +76,7 @@ static GtkStatusIcon *CreateTrayIcon() {
         tray_icon = gtk_status_icon_new();
         g_signal_connect(G_OBJECT(tray_icon), "activate", G_CALLBACK(ShowTrayMenu), NULL);
         g_signal_connect_swapped(G_OBJECT(tray_icon), "popup-menu",G_CALLBACK(ShowTrayMenu), NULL);
-        gtk_status_icon_set_from_file (tray_icon, "icons/drive-normal.png");
+        gtk_status_icon_set_from_file (tray_icon, "/usr/share/pixmaps/mountray/drive-normal.png");
         gtk_status_icon_set_tooltip(tray_icon, "Mountray. Tray mounter");
         gtk_status_icon_set_visible(tray_icon, TRUE);
         return tray_icon;
@@ -85,7 +85,7 @@ static GtkStatusIcon *CreateTrayIcon() {
 gboolean TimerFuncReturnStatusIcon(GtkWidget *label) {
 
 	 if (iconchangestatus) {
-		gtk_status_icon_set_from_file (tray_icon, "icons/drive-normal.png");
+		gtk_status_icon_set_from_file (tray_icon, "/usr/share/pixmaps/mountray/drive-normal.png");
 		iconchangestatus=0;
 	}
 	return TRUE;

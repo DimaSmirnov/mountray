@@ -83,7 +83,7 @@ static void mountray_init(Gio gio) {
 /////////////////////////////////////
 static void on_volume_connected(GVolumeMonitor *volume_monitor, GVolume *volume, Gio gio) {
 
-    gtk_status_icon_set_from_file (tray_icon, "icons/drive-active.png");
+    gtk_status_icon_set_from_file (tray_icon, "/usr/share/pixmaps/mountray/drive-active.png");
 	iconchangestatus=1;
 	gtk_widget_destroy (menu);
 	free(volumes);
@@ -96,7 +96,7 @@ static void on_volume_connected(GVolumeMonitor *volume_monitor, GVolume *volume,
 }
 /////////////////////////////////////
 static void on_volume_disconnected(GVolumeMonitor *volume_monitor, GVolume *volume, Gio gio) {
-    gtk_status_icon_set_from_file (tray_icon, "icons/drive-active.png");
+    gtk_status_icon_set_from_file (tray_icon, "/usr/share/pixmaps/mountray/drive-active.png");
 	iconchangestatus=1;
 	gtk_widget_destroy (menu);
 	free(volumes);
@@ -105,7 +105,7 @@ static void on_volume_disconnected(GVolumeMonitor *volume_monitor, GVolume *volu
 }
 /////////////////////////////////////
 static void on_volume_mounted(GVolumeMonitor *volume_monitor, GDrive *drive, Gio gio) {
-    gtk_status_icon_set_from_file (tray_icon, "icons/drive-active.png");
+    gtk_status_icon_set_from_file (tray_icon, "/usr/share/pixmaps/mountray/drive-active.png");
 	iconchangestatus=1;
 	gtk_widget_destroy (menu);
 	free(volumes);
@@ -115,7 +115,7 @@ static void on_volume_mounted(GVolumeMonitor *volume_monitor, GDrive *drive, Gio
 /////////////////////////////////////
 static void on_volume_unmounted (GVolumeMonitor *volume_monitor, GDrive *drive, Gio gio) {
 
-    gtk_status_icon_set_from_file (tray_icon, "icons/drive-active.png");
+    gtk_status_icon_set_from_file (tray_icon, "/usr/share/pixmaps/mountray/drive-active.png");
 	iconchangestatus=1;
 	for (int i=0; strlen(volumes[i].name)>0; i++) {
 		if (drive = volumes[i].drive) { drv_name=volumes[i].drive_name; break; }
