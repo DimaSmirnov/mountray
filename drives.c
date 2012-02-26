@@ -125,6 +125,4 @@ static void on_volume_unmounted (GVolumeMonitor *volume_monitor, GDrive *drive, 
 	free(volumes);
 	create_menu(gio);
 	printf("Volume unmounted\n");
-
-
 }

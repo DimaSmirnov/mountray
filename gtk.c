@@ -5,6 +5,7 @@
 GtkWidget *menu, *response_widget, *menuitem, *image, *widget, *sep;
 GtkStatusIcon *tray_icon;
 GdkPixbuf *buf;
+
 GtkIconSize icon_size;
 GError *error = NULL;
 struct  vols{   // -- массив разделов
@@ -24,6 +25,7 @@ void ActionOnQuit() {
 
 	printf("Exiting. See you again!\n");
 	gtk_widget_destroy (menu);
+	//g_object_unref(gio->monitor);
 	free(volumes);
 	gtk_main_quit ();
 }
